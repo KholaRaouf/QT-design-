@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Project</class>
+ <widget class="QMainWindow" name="Project">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>870</width>
+    <height>602</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 236, 226);</string>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>560</y>
+      <width>371</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QProgressBar {
+    border: 2px solid black;  /* Border color around the progress bar */
+    border-radius: 10px;  /* Rounded corners */
+    background-color: rgb(198, 164, 255);  /* Background color */
+    text-align: center;  /* Text alignment for percentage text */
+    padding: 1px;  /* Small padding to prevent clipping */
+}
+
+QProgressBar::chunk {
+    background-color: rgb(255, 236, 226); /* Color of the progress fill */
+    border-radius: 10px;  /* Match the outer border-radius */
+    margin: 1px;  /* Small margin to prevent clipping inside */
+}
+</string>
+    </property>
+    <property name="value">
+     <number>24</number>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>240</y>
+      <width>711</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#tableWidget {
+    border: 1px solid black;  /* Border color */
+    border-radius: 10px;  /* Rounded corners */
+    padding: 0px;  /* Remove any default padding */
+}
+
+#tableWidget::item {
+    border: none;  /* No internal item borders */
+    color: black;  /* Ensure text color is black for items */
+}
+#tableWidget::item:selected {
+    background-color: rgb(198, 164, 255);  /* Selection background color */
+    color: black;  /* Text color for selected item */
+}
+#tableWidget::viewport {
+    background-color: transparent;  /* Transparent viewport for rounded corners */
+    border-radius: 10px;  /* Apply border-radius to viewport */
+}
+
+QHeaderView::section {
+   background-color: rgb(198, 164, 255);  /* Header section background color */
+    border: 1px solid black;  /* Header section border */
+    padding: 4px;
+}
+
+QScrollBar:horizontal, QScrollBar:vertical {
+    border: none;  /* Optional: Scrollbar border removal */
+}
+
+
+/* Style the vertical scrollbar */
+QScrollBar:vertical {
+    border: none;
+   background-color: rgb(198, 164, 255);  /* Scroll area background color */
+    width: 16px;
+    margin: 22px 0px 22px 0px;  /* Margin to avoid overlap with headers */
+}
+
+QScrollBar::handle:vertical {
+    background-color: rgb(198, 164, 255);  /* Scrollbar handle color */
+    min-height: 20px;
+    border-radius: 8px;  /* Rounded handle */
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: none;
+    background-color: rgb(198, 164, 255);  /* Arrow background color */
+    height: 16px;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:vertical {
+    subcontrol-position: bottom;
+}
+
+QScrollBar::sub-line:vertical {
+    subcontrol-position: top;
+}
+
+/* Style the horizontal scrollbar */
+QScrollBar:horizontal {
+    border: none;
+   background-color: rgb(198, 164, 255); /* Scroll area background color */
+    height: 16px;
+    margin: 0px 22px 0px 22px;  /* Margin to avoid overlap with headers */
+}
+
+QScrollBar::handle:horizontal {
+   background-color: rgb(198, 164, 255);  /* Scrollbar handle color */
+    min-width: 20px;
+    border-radius: 8px;  /* Rounded handle */
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    border: none;
+    background-color: rgb(198, 164, 255);  /* Arrow background color */
+    width: 16px;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:horizontal {
+    subcontrol-position: right;
+}
+
+QScrollBar::sub-line:horizontal {
+    subcontrol-position: left;
+}
+</string>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOn</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOn</enum>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::NoEditTriggers</set>
+    </property>
+    <column>
+     <property name="text">
+      <string>Tilte</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Author</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Type of Matrial</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Publisher</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Liturature</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Availablity</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Link</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QPushButton" name="pushButton_sort">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>140</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#pushButton_sort {
+    border-radius: 10px;  /* Rounded corners */
+    border: 1px solid black;  /* Optional: border color */
+    background-color: rgb(198, 164, 255);  /* Button default background color */
+}
+
+#pushButton_sort:hover {
+    background-color: #e0e0e0;  /* Background color when hovered */
+    border: 1px solid #0078d7;  /* Optional: Change border color on hover */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Sort</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_search">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>180</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#pushButton_search {
+    border-radius: 10px;  /* Rounded corners */
+    border: 1px solid black;  /* Optional: border color */
+    background-color: rgb(198, 164, 255);  /* Button default background color */
+}
+
+#pushButton_search:hover {
+    background-color: #e0e0e0;  /* Background color when hovered */
+    border: 1px solid #0078d7;  /* Optional: Change border color on hover */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Search</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>180</y>
+      <width>601</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lineEdit {
+    border-radius: 10px;  /* Rounded corners */
+    border: 1px solid black;  /* Optional: border color */
+  }
+
+</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_col">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>140</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#comboBox_col {
+    border: 2px solid gray;
+    border-radius: 10px;  /* Rounded edges for the main combo box */
+    padding: 5px;
+/* Background color */
+}
+
+QComboBox::drop-down {
+    border-left: 1px solid gray;
+    border-radius: 10px;  /* Rounded button */
+    background-color: #a394f7; /* Drop-down button color */
+    width: 30px;  /* Size of the drop-down button */
+}
+
+QComboBox::down-arrow {
+    image: url(down_arrow_icon.png); /* Optional: Custom arrow icon */
+    width: 20px;
+    height: 20px;
+}
+
+ComboBox QAbstractItemView {
+    border: 1px solid gray;
+    border-radius: 10px;  /* Rounded drop-down list */
+    background-color: white;  /* Background color for the list */
+    selection-background-color: #a394f7;  /* Background of selected item */
+    selection-color: black;  /* Text color of selected item */
+}
+</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Serial Wise</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Title</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Author</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Availabillty</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Format</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Text</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Link</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Litrature</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="comboBox_algo">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>140</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QComboBox {
+    border: 2px solid gray;
+    border-radius: 10px;  /* Rounded edges for the main combo box */
+    padding: 5px;
+/* Background color */
+}
+
+QComboBox::drop-down {
+    border-left: 1px solid gray;
+    border-radius: 10px;  /* Rounded button */
+    background-color: #a394f7; /* Drop-down button color */
+    width: 30px;  /* Size of the drop-down button */
+}
+
+QComboBox::down-arrow {
+    image: url(down_arrow_icon.png); /* Optional: Custom arrow icon */
+    width: 20px;
+    height: 20px;
+}
+
+ComboBox QAbstractItemView {
+    border: 1px solid gray;
+    border-radius: 10px;  /* Rounded drop-down list */
+    background-color: white;  /* Background color for the list */
+    selection-background-color: #a394f7;  /* Background of selected item */
+    selection-color: black;  /* Text color of selected item */
+}
+</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Bubble Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Insertion Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Selection Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Merge Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Quick Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Counting Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Redix Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bucket Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Comb Sort</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Shell Sort</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>140</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+
+font: 87 8pt &quot;Arial Black&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Sorting Colum</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>130</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+
+font: 87 8pt &quot;Arial Black&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Sorting Algorithm</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="verticalFrame">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>-1</y>
+      <width>871</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(198, 164, 255);</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QWidget" name="widget" native="true">
+       <widget class="QPushButton" name="CrossButton">
+        <property name="geometry">
+         <rect>
+          <x>810</x>
+          <y>0</y>
+          <width>31</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Segoe MDL2 Assets</family>
+          <pointsize>22</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 0, 0);</string>
+        </property>
+        <property name="text">
+         <string>x</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="MinimizeButton">
+        <property name="geometry">
+         <rect>
+          <x>764</x>
+          <y>2</y>
+          <width>31</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>36</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(0, 0, 255);
+color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QWidget {
+	background-color: rgb(78, 23, 127);
+    border-radius: 10px; /* Adjust this value for the amount of rounding */
+    border: 1px solid black; /* Optional: Border color and width */
+ 
+}
+</string>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:26pt; font-weight:600; color:#ffddcf;&quot;&gt;Library Data Sorting Operation&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QPushButton" name="pushButton_scrapp">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>100</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#pushButton_scrapp {
+    border-radius: 10px;  /* Rounded corners */
+    border: 1px solid black;  /* Optional: border color */
+    background-color: rgb(198, 164, 255);  /* Button default background color */
+}
+
+#pushButton_scrappp:hover {
+    background-color: #e0e0e0;  /* Background color when hovered */
+    border: 1px solid #0078d7;  /* Optional: Change border color on hover */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Scrapp</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="TextBox">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>210</y>
+      <width>711</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#TextBox {
+    border-radius: 10px;  /* Rounded corners */
+    border: 1px solid black;  /* Optional: border color */
+  }
+
+</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
